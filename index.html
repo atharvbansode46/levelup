@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#25232d" />
+  <title>LevelUp — Learn with momentum</title>
+  <meta name="description" content="A local-first skill roadmap and career proof tracker." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#overview" aria-label="LevelUp overview"><span class="brand-mark">↗</span><span>level<span>up</span></span></a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="primary-nav" aria-label="Workspace">
+        <button class="nav-item active" data-view="overview"><span class="nav-icon">⌂</span>Overview</button>
+        <button class="nav-item" data-view="roadmaps"><span class="nav-icon">⌁</span>My roadmaps <span class="nav-count" id="roadmapCount">2</span></button>
+        <button class="nav-item" data-view="tasks"><span class="nav-icon">✓</span>Tasks <span class="nav-count" id="taskCount">0</span></button>
+        <button class="nav-item" data-view="achievements"><span class="nav-icon">✦</span>Achievements</button>
+      </nav>
+      <div class="workspace-label later-label">CAREER OUTCOMES</div>
+      <nav class="primary-nav" aria-label="Career">
+        <button class="nav-item" data-view="profile"><span class="nav-icon">◎</span>Career profile</button>
+        <button class="nav-item" data-view="settings"><span class="nav-icon">⚙</span>Settings</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="streak-card"><div class="streak-icon">♨</div><div><strong id="sidebarStreak">12 day streak</strong><small>Keep the momentum going</small></div></div>
+        <button class="demo-badge" id="demoBadge"><span>●</span> Demo workspace <span>⌄</span></button>
+        <button class="user-chip" data-view="profile"><span class="avatar">AS</span><span class="user-meta"><strong id="sidebarName">Alex Smith</strong><small id="sidebarLevel">Level 14 · 2,840 XP</small></span><span class="more">•••</span></button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button>
+        <div class="breadcrumb"><span>Workspace</span><b>/</b><strong id="pageTitle">Overview</strong></div>
+        <div class="topbar-actions"><button class="icon-button" id="notificationButton" aria-label="Notifications">♢<span class="notification-dot"></span></button><button class="help-button" id="helpButton">? <span>Help center</span></button><button class="new-goal-button" id="newGoalBtn"><span>＋</span> New goal</button></div>
+      </header>
+      <div id="app" class="content-wrap" aria-live="polite"></div>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status"><span>✦</span><strong></strong><small></small></div>
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
